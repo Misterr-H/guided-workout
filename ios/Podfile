@@ -30,7 +30,7 @@ end
 
 # $EnableCoreMLDelegate=true
 
-platform :ios, podfile_properties['ios.deploymentTarget'] || '13.4'
+platform :ios, podfile_properties['ios.deploymentTarget'] || '17.0'
 install! 'cocoapods',
   :deterministic_uuids => false
 
@@ -51,7 +51,8 @@ target 'guidedworkout' do
     :privacy_file_aggregation_enabled => podfile_properties['apple.privacyManifestAggregationEnabled'] != 'false',
   )
 
-  pod 'MediaPipeTasksVision', '0.10.14'
+  pod 'GoogleMLKit/PoseDetection', '7.0.0'
+
 
   post_install do |installer|
     react_native_post_install(
